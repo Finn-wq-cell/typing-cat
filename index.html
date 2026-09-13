@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Cat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Type to make the cat jump! 🐱</h1>
+        <div class="canvas">
+            <div class="cat" id="cat">
+                <div class="cat-head">
+                    <div class="ear ear-left"></div>
+                    <div class="ear ear-right"></div>
+                    <div class="eye eye-left"></div>
+                    <div class="eye eye-right"></div>
+                    <div class="nose"></div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="cat-body"></div>
+                <div class="paw paw-front-left"></div>
+                <div class="paw paw-front-right"></div>
+                <div class="tail"></div>
+            </div>
+        </div>
+        <div class="info">
+            <p>Keys pressed: <span id="keyCount">0</span></p>
+            <p id="lastKey"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
