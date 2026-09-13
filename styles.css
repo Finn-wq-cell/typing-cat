@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.canvas {
+    background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 100%);
+    border-radius: 15px;
+    padding: 40px;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #667eea;
+}
+
+/* Cat Styling */
+.cat {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    transition: all 0.1s ease-out;
+}
+
+.cat-head {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: #FF9F43;
+    border-radius: 50% 50% 50% 50%;
+    margin: 0 auto;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ears */
+.ear {
+    position: absolute;
+    width: 20px;
+    height: 25px;
+    background: #FF9F43;
+    border-radius: 50% 50% 50% 0;
+    top: -10px;
+    box-shadow: inset -2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.ear-left {
+    left: 5px;
+    transform: rotate(-25deg);
+}
+
+.ear-right {
+    right: 5px;
+    transform: rotate(25deg);
+}
+
+/* Ear Inner */
+.ear::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 15px;
+    background: #FFD89B;
+    border-radius: 50%;
+    top: 3px;
+    left: 5px;
+}
+
+/* Eyes */
+.eye {
+    position: absolute;
+    width: 12px;
+    height: 16px;
+    background: #000;
+    border-radius: 50%;
+    top: 18px;
+}
+
+.eye-left {
+    left: 15px;
+}
+
+.eye-right {
+    right: 15px;
+}
+
+.eye::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    top: 2px;
+    left: 3px;
+}
+
+/* Nose */
+.nose {
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    background: #FFB3BA;
+    border-radius: 50%;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Mouth */
+.mouth {
+    position: absolute;
+    width: 15px;
+    height: 8px;
+    border: 2px solid #000;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Body */
+.cat-body {
+    width: 55px;
+    height: 45px;
+    background: #FF9F43;
+    border-radius: 50% 50% 40% 40%;
+    margin: -8px auto 0;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Paws */
+.paw {
+    position: absolute;
+    width: 18px;
+    height: 22px;
+    background: #FF9F43;
+    border-radius: 50% 50% 50% 50%;
+    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.paw-front-left {
+    left: 12px;
+    bottom: -8px;
+}
+
+.paw-front-right {
+    right: 12px;
+    bottom: -8px;
+}
+
+/* Paw Pads */
+.paw::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 6px;
+    background: #FFD89B;
+    border-radius: 50%;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Tail */
+.tail {
+    position: absolute;
+    width: 40px;
+    height: 12px;
+    background: #FF9F43;
+    border-radius: 50%;
+    right: -20px;
+    bottom: 30px;
+    transform: rotate(-30deg);
+    transform-origin: left center;
+    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.2);
+    animation: tailWag 0.4s ease-in-out;
+}
+
+@keyframes tailWag {
+    0%, 100% { transform: rotate(-30deg); }
+    50% { transform: rotate(30deg); }
+}
+
+/* Jump animation */
+@keyframes jump {
+    0% { bottom: 20px; }
+    50% { bottom: 150px; }
+    100% { bottom: 20px; }
+}
+
+.cat.jumping {
+    animation: jump 0.4s ease-out;
+}
+
+.info {
+    margin-top: 30px;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.info p {
+    margin: 8px 0;
+}
+
+#keyCount {
+    font-weight: bold;
+    color: #667eea;
+    font-size: 1.3em;
+}
+
+#lastKey {
+    color: #764ba2;
+    font-style: italic;
+    min-height: 20px;
+}
